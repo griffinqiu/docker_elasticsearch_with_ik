@@ -1,8 +1,8 @@
-FROM elasticsearch:2.4.4
+FROM docker.elastic.co/elasticsearch/elasticsearch:6.3.0
 
 WORKDIR /usr/share/elasticsearch
 
-ENV ES_IK_VERSION 1.10.4
+ENV ES_IK_VERSION 6.3.0
 RUN curl -o elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -L -e  ';auto' https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v${ES_IK_VERSION}/elasticsearch-analysis-ik-${ES_IK_VERSION}.zip && \
 mkdir -p plugins/ik/ && \
 unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d plugins/ik/ && \
