@@ -7,5 +7,6 @@ RUN curl -o elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -L -e  ';auto' https:
 mkdir -p plugins/ik/ && \
 unzip elasticsearch-analysis-ik-${ES_IK_VERSION}.zip -d plugins/ik/ && \
 rm -f elasticsearch-analysis-ik-${ES_IK_VERSION}.zip
-
 RUN chown -R elasticsearch:elasticsearch plugins/ik
+
+RUN bin/elasticsearch-plugin install analysis-smartcn
